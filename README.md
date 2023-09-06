@@ -10,7 +10,7 @@
 https://github.com/VictorKabata/DarajaSwiftPackage.git
 ```
 
-<video src="assets/add_spm.mp4"/>|
+https://github.com/VictorKabata/DarajaSwiftPackage/assets/39780120/b9283612-3c5e-4100-aff8-c2c0d9f31863
 
 - Create an instance of the Daraja object by passing the daraja environment variables. The daraja object provides functions to request for an access token and initiate M-Pesa express STK request.
 

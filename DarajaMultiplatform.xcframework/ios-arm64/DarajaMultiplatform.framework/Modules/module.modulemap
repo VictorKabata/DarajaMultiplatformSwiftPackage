@@ -1,4 +1,4 @@
-framework module DarajaMultiplatform {
+framework module "DarajaMultiplatform" {
     umbrella header "DarajaMultiplatform.h"
 
     export *

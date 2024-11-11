@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class DarajaMultiplatformDarajaEnvironment, DarajaMultiplatformDarajaPaymentResponse, DarajaMultiplatformDarajaResult<__covariant T>, DarajaMultiplatformDarajaTransactionType, DarajaMultiplatformDarajaTransactionResponse, DarajaMultiplatformDarajaToken, DarajaMultiplatformDaraja, DarajaMultiplatformDarajaBuilder, DarajaMultiplatformKotlinEnumCompanion, DarajaMultiplatformKotlinEnum<E>, DarajaMultiplatformKotlinArray<T>, DarajaMultiplatformDarajaException, DarajaMultiplatformDarajaResultFailure, DarajaMultiplatformKotlinNothing, DarajaMultiplatformDarajaResultSuccess<__covariant T>, DarajaMultiplatformKotlinThrowable, DarajaMultiplatformKotlinException, DarajaMultiplatformDarajaExceptionCompanion, DarajaMultiplatformDarajaPaymentRequestCompanion, DarajaMultiplatformDarajaPaymentRequest, DarajaMultiplatformDarajaPaymentResponseCompanion, DarajaMultiplatformDarajaTokenCompanion, DarajaMultiplatformDarajaTransactionResponseCompanion, DarajaMultiplatformQueryDarajaTransactionRequestCompanion, DarajaMultiplatformQueryDarajaTransactionRequest, DarajaMultiplatformKotlinx_serialization_coreSerializersModule, DarajaMultiplatformKotlinx_serialization_coreSerialKind;
+@class DarajaMultiplatformDarajaEnvironment, DarajaMultiplatformDarajaToken, DarajaMultiplatformDarajaResult<__covariant T>, DarajaMultiplatformDynamicQrResponse, DarajaMultiplatformDarajaTransactionCode, DarajaMultiplatformMpesaExpressResponse, DarajaMultiplatformDarajaTransactionType, DarajaMultiplatformQueryMpesaExpressResponse, DarajaMultiplatformDaraja, DarajaMultiplatformDarajaBuilder, DarajaMultiplatformKotlinThrowable, DarajaMultiplatformKotlinArray<T>, DarajaMultiplatformKotlinException, DarajaMultiplatformDarajaExceptionCompanion, DarajaMultiplatformDarajaException, DarajaMultiplatformDarajaTokenCompanion, DarajaMultiplatformDynamicQrResponseCompanion, DarajaMultiplatformMpesaExpressResponseCompanion, DarajaMultiplatformQueryMpesaExpressResponseCompanion, DarajaMultiplatformKotlinEnumCompanion, DarajaMultiplatformKotlinEnum<E>, DarajaMultiplatformDarajaIdentifierType, DarajaMultiplatformDarajaResultFailure, DarajaMultiplatformKotlinNothing, DarajaMultiplatformDarajaResultSuccess<__covariant T>, DarajaMultiplatformKotlinx_serialization_coreSerializersModule, DarajaMultiplatformKotlinx_serialization_coreSerialKind;
 
-@protocol DarajaMultiplatformKotlinComparable, DarajaMultiplatformKotlinx_serialization_coreKSerializer, DarajaMultiplatformKotlinIterator, DarajaMultiplatformKotlinx_serialization_coreEncoder, DarajaMultiplatformKotlinx_serialization_coreSerialDescriptor, DarajaMultiplatformKotlinx_serialization_coreSerializationStrategy, DarajaMultiplatformKotlinx_serialization_coreDecoder, DarajaMultiplatformKotlinx_serialization_coreDeserializationStrategy, DarajaMultiplatformKotlinx_serialization_coreCompositeEncoder, DarajaMultiplatformKotlinAnnotation, DarajaMultiplatformKotlinx_serialization_coreCompositeDecoder, DarajaMultiplatformKotlinx_serialization_coreSerializersModuleCollector, DarajaMultiplatformKotlinKClass, DarajaMultiplatformKotlinKDeclarationContainer, DarajaMultiplatformKotlinKAnnotatedElement, DarajaMultiplatformKotlinKClassifier;
+@protocol DarajaMultiplatformKotlinx_serialization_coreKSerializer, DarajaMultiplatformKotlinComparable, DarajaMultiplatformKotlinIterator, DarajaMultiplatformKotlinx_serialization_coreEncoder, DarajaMultiplatformKotlinx_serialization_coreSerialDescriptor, DarajaMultiplatformKotlinx_serialization_coreSerializationStrategy, DarajaMultiplatformKotlinx_serialization_coreDecoder, DarajaMultiplatformKotlinx_serialization_coreDeserializationStrategy, DarajaMultiplatformKotlinx_serialization_coreCompositeEncoder, DarajaMultiplatformKotlinAnnotation, DarajaMultiplatformKotlinx_serialization_coreCompositeDecoder, DarajaMultiplatformKotlinx_serialization_coreSerializersModuleCollector, DarajaMultiplatformKotlinKClass, DarajaMultiplatformKotlinKDeclarationContainer, DarajaMultiplatformKotlinKAnnotatedElement, DarajaMultiplatformKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -147,26 +147,305 @@ __attribute__((swift_name("KotlinBoolean")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Daraja")))
 @interface DarajaMultiplatformDaraja : DarajaMultiplatformBase
-- (instancetype)initWithConsumerKey:(NSString * _Nullable)consumerKey consumerSecret:(NSString * _Nullable)consumerSecret passKey:(NSString * _Nullable)passKey environment:(DarajaMultiplatformDarajaEnvironment * _Nullable)environment __attribute__((swift_name("init(consumerKey:consumerSecret:passKey:environment:)"))) __attribute__((objc_designated_initializer));
-- (DarajaMultiplatformDarajaResult<DarajaMultiplatformDarajaPaymentResponse *> *)initiateMpesaExpressPaymentBusinessShortCode:(NSString *)businessShortCode amount:(int32_t)amount phoneNumber:(NSString *)phoneNumber transactionType:(DarajaMultiplatformDarajaTransactionType *)transactionType transactionDesc:(NSString *)transactionDesc callbackUrl:(NSString *)callbackUrl accountReference:(NSString * _Nullable)accountReference __attribute__((swift_name("initiateMpesaExpressPayment(businessShortCode:amount:phoneNumber:transactionType:transactionDesc:callbackUrl:accountReference:)")));
-- (DarajaMultiplatformDarajaResult<DarajaMultiplatformDarajaTransactionResponse *> *)queryMpesaTransactionBusinessShortCode:(NSString *)businessShortCode checkoutRequestID:(NSString *)checkoutRequestID __attribute__((swift_name("queryMpesaTransaction(businessShortCode:checkoutRequestID:)")));
-- (DarajaMultiplatformDarajaResult<DarajaMultiplatformDarajaToken *> *)requestAccessToken __attribute__((swift_name("requestAccessToken()")));
+- (instancetype)initWithConsumerKey:(NSString *)consumerKey consumerSecret:(NSString *)consumerSecret passKey:(NSString *)passKey environment:(DarajaMultiplatformDarajaEnvironment * _Nullable)environment __attribute__((swift_name("init(consumerKey:consumerSecret:passKey:environment:)"))) __attribute__((objc_designated_initializer));
+- (DarajaMultiplatformDarajaResult<DarajaMultiplatformDarajaToken *> *)authorization __attribute__((swift_name("authorization()")));
+- (DarajaMultiplatformDarajaResult<DarajaMultiplatformDynamicQrResponse *> *)generateDynamicQrMerchantName:(NSString *)merchantName referenceNumber:(NSString *)referenceNumber amount:(int32_t)amount transactionCode:(DarajaMultiplatformDarajaTransactionCode *)transactionCode cpi:(NSString *)cpi size:(int32_t)size __attribute__((swift_name("generateDynamicQr(merchantName:referenceNumber:amount:transactionCode:cpi:size:)")));
+- (DarajaMultiplatformDarajaResult<DarajaMultiplatformMpesaExpressResponse *> *)mpesaExpressBusinessShortCode:(NSString *)businessShortCode amount:(int32_t)amount phoneNumber:(NSString *)phoneNumber transactionType:(DarajaMultiplatformDarajaTransactionType *)transactionType transactionDesc:(NSString *)transactionDesc callbackUrl:(NSString *)callbackUrl accountReference:(NSString * _Nullable)accountReference __attribute__((swift_name("mpesaExpress(businessShortCode:amount:phoneNumber:transactionType:transactionDesc:callbackUrl:accountReference:)")));
+- (DarajaMultiplatformDarajaResult<DarajaMultiplatformQueryMpesaExpressResponse *> *)mpesaExpressQueryBusinessShortCode:(NSString *)businessShortCode timestamp:(NSString *)timestamp checkoutRequestID:(NSString *)checkoutRequestID __attribute__((swift_name("mpesaExpressQuery(businessShortCode:timestamp:checkoutRequestID:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Daraja.Builder")))
 @interface DarajaMultiplatformDarajaBuilder : DarajaMultiplatformBase
-- (instancetype)initWithConsumerKey:(NSString * _Nullable)consumerKey consumerSecret:(NSString * _Nullable)consumerSecret passKey:(NSString * _Nullable)passKey environment:(DarajaMultiplatformDarajaEnvironment * _Nullable)environment __attribute__((swift_name("init(consumerKey:consumerSecret:passKey:darajaEnvironment:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithConsumerKey:(NSString *)consumerKey consumerSecret:(NSString *)consumerSecret passKey:(NSString *)passKey environment:(DarajaMultiplatformDarajaEnvironment *)environment __attribute__((swift_name("init(consumerKey:consumerSecret:passKey:darajaEnvironment:)"))) __attribute__((objc_designated_initializer));
 - (DarajaMultiplatformDaraja *)build __attribute__((swift_name("doInit()")));
-- (DarajaMultiplatformDarajaBuilder *)doCopyConsumerKey:(NSString * _Nullable)consumerKey consumerSecret:(NSString * _Nullable)consumerSecret passKey:(NSString * _Nullable)passKey environment:(DarajaMultiplatformDarajaEnvironment * _Nullable)environment __attribute__((swift_name("doCopy(consumerKey:consumerSecret:passKey:darajaEnvironment:)")));
+- (DarajaMultiplatformDarajaBuilder *)doCopyConsumerKey:(NSString *)consumerKey consumerSecret:(NSString *)consumerSecret passKey:(NSString *)passKey environment:(DarajaMultiplatformDarajaEnvironment *)environment __attribute__((swift_name("doCopy(consumerKey:consumerSecret:passKey:darajaEnvironment:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (DarajaMultiplatformDarajaBuilder *)isProduction __attribute__((swift_name("isProduction()")));
-- (DarajaMultiplatformDarajaBuilder *)isSandbox __attribute__((swift_name("isSandbox()")));
 - (DarajaMultiplatformDarajaBuilder *)setConsumerKeyConsumerKey:(NSString *)consumerKey __attribute__((swift_name("withConsumerKey(consumerKey:)")));
 - (DarajaMultiplatformDarajaBuilder *)setConsumerSecretConsumerSecret:(NSString *)consumerSecret __attribute__((swift_name("withConsumerSecret(consumerSecret:)")));
 - (DarajaMultiplatformDarajaBuilder *)setPassKeyPassKey:(NSString *)passKey __attribute__((swift_name("withPassKey(passKey:)")));
+- (DarajaMultiplatformDarajaBuilder *)setProductionEnvironment __attribute__((swift_name("setProductionEnvironment()")));
+- (DarajaMultiplatformDarajaBuilder *)setSandboxEnvironment __attribute__((swift_name("setSandboxEnvironment()")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@end
+
+__attribute__((swift_name("KotlinThrowable")))
+@interface DarajaMultiplatformKotlinThrowable : DarajaMultiplatformBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
+
+/**
+ * @note annotations
+ *   kotlin.experimental.ExperimentalNativeApi
+*/
+- (DarajaMultiplatformKotlinArray<NSString *> *)getStackTrace __attribute__((swift_name("getStackTrace()")));
+- (void)printStackTrace __attribute__((swift_name("printStackTrace()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) DarajaMultiplatformKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+- (NSError *)asError __attribute__((swift_name("asError()")));
+@end
+
+__attribute__((swift_name("KotlinException")))
+@interface DarajaMultiplatformKotlinException : DarajaMultiplatformKotlinThrowable
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DarajaException")))
+@interface DarajaMultiplatformDarajaException : DarajaMultiplatformKotlinException
+- (instancetype)initWithRequestId:(NSString * _Nullable)requestId errorCode:(NSString * _Nullable)errorCode errorMessage:(NSString * _Nullable)errorMessage __attribute__((swift_name("init(requestId:errorCode:errorMessage:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithCause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly, getter=companion) DarajaMultiplatformDarajaExceptionCompanion *companion __attribute__((swift_name("companion")));
+- (DarajaMultiplatformDarajaException *)doCopyRequestId:(NSString * _Nullable)requestId errorCode:(NSString * _Nullable)errorCode errorMessage:(NSString * _Nullable)errorMessage __attribute__((swift_name("doCopy(requestId:errorCode:errorMessage:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="errorCode")
+*/
+@property NSString * _Nullable errorCode __attribute__((swift_name("errorCode")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="errorMessage")
+*/
+@property NSString * _Nullable errorMessage __attribute__((swift_name("errorMessage")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="requestId")
+*/
+@property NSString * _Nullable requestId __attribute__((swift_name("requestId")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DarajaException.Companion")))
+@interface DarajaMultiplatformDarajaExceptionCompanion : DarajaMultiplatformBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) DarajaMultiplatformDarajaExceptionCompanion *shared __attribute__((swift_name("shared")));
+- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DarajaToken")))
+@interface DarajaMultiplatformDarajaToken : DarajaMultiplatformBase
+- (instancetype)initWithAccessToken:(NSString *)accessToken expiresIn:(NSString *)expiresIn __attribute__((swift_name("init(accessToken:expiresIn:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) DarajaMultiplatformDarajaTokenCompanion *companion __attribute__((swift_name("companion")));
+- (DarajaMultiplatformDarajaToken *)doCopyAccessToken:(NSString *)accessToken expiresIn:(NSString *)expiresIn __attribute__((swift_name("doCopy(accessToken:expiresIn:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="access_token")
+*/
+@property (readonly) NSString *accessToken __attribute__((swift_name("accessToken")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="expires_in")
+*/
+@property (readonly) NSString *expiresIn __attribute__((swift_name("expiresIn")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DarajaToken.Companion")))
+@interface DarajaMultiplatformDarajaTokenCompanion : DarajaMultiplatformBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) DarajaMultiplatformDarajaTokenCompanion *shared __attribute__((swift_name("shared")));
+- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DynamicQrResponse")))
+@interface DarajaMultiplatformDynamicQrResponse : DarajaMultiplatformBase
+- (instancetype)initWithResponseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription qrCode:(NSString *)qrCode __attribute__((swift_name("init(responseCode:responseDescription:qrCode:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) DarajaMultiplatformDynamicQrResponseCompanion *companion __attribute__((swift_name("companion")));
+- (DarajaMultiplatformDynamicQrResponse *)doCopyResponseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription qrCode:(NSString *)qrCode __attribute__((swift_name("doCopy(responseCode:responseDescription:qrCode:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="QRCode")
+*/
+@property (readonly) NSString *qrCode __attribute__((swift_name("qrCode")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResponseCode")
+*/
+@property (readonly) NSString *responseCode __attribute__((swift_name("responseCode")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResponseDescription")
+*/
+@property (readonly) NSString *responseDescription __attribute__((swift_name("responseDescription")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DynamicQrResponse.Companion")))
+@interface DarajaMultiplatformDynamicQrResponseCompanion : DarajaMultiplatformBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) DarajaMultiplatformDynamicQrResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MpesaExpressResponse")))
+@interface DarajaMultiplatformMpesaExpressResponse : DarajaMultiplatformBase
+- (instancetype)initWithMerchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID responseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription customerMessage:(NSString *)customerMessage __attribute__((swift_name("init(merchantRequestID:checkoutRequestID:responseCode:responseDescription:customerMessage:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) DarajaMultiplatformMpesaExpressResponseCompanion *companion __attribute__((swift_name("companion")));
+- (DarajaMultiplatformMpesaExpressResponse *)doCopyMerchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID responseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription customerMessage:(NSString *)customerMessage __attribute__((swift_name("doCopy(merchantRequestID:checkoutRequestID:responseCode:responseDescription:customerMessage:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="CheckoutRequestID")
+*/
+@property NSString *checkoutRequestID __attribute__((swift_name("checkoutRequestID")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="CustomerMessage")
+*/
+@property NSString *customerMessage __attribute__((swift_name("customerMessage")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="MerchantRequestID")
+*/
+@property NSString *merchantRequestID __attribute__((swift_name("merchantRequestID")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResponseCode")
+*/
+@property NSString *responseCode __attribute__((swift_name("responseCode")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResponseDescription")
+*/
+@property NSString *responseDescription __attribute__((swift_name("responseDescription")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MpesaExpressResponse.Companion")))
+@interface DarajaMultiplatformMpesaExpressResponseCompanion : DarajaMultiplatformBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) DarajaMultiplatformMpesaExpressResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("QueryMpesaExpressResponse")))
+@interface DarajaMultiplatformQueryMpesaExpressResponse : DarajaMultiplatformBase
+- (instancetype)initWithResponseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription merchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID resultCode:(NSString *)resultCode resultDescription:(NSString *)resultDescription __attribute__((swift_name("init(responseCode:responseDescription:merchantRequestID:checkoutRequestID:resultCode:resultDescription:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) DarajaMultiplatformQueryMpesaExpressResponseCompanion *companion __attribute__((swift_name("companion")));
+- (DarajaMultiplatformQueryMpesaExpressResponse *)doCopyResponseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription merchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID resultCode:(NSString *)resultCode resultDescription:(NSString *)resultDescription __attribute__((swift_name("doCopy(responseCode:responseDescription:merchantRequestID:checkoutRequestID:resultCode:resultDescription:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="CheckoutRequestID")
+*/
+@property (readonly) NSString *checkoutRequestID __attribute__((swift_name("checkoutRequestID")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="MerchantRequestID")
+*/
+@property (readonly) NSString *merchantRequestID __attribute__((swift_name("merchantRequestID")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResponseCode")
+*/
+@property (readonly) NSString *responseCode __attribute__((swift_name("responseCode")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResponseDescription")
+*/
+@property (readonly) NSString *responseDescription __attribute__((swift_name("responseDescription")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResultCode")
+*/
+@property (readonly) NSString *resultCode __attribute__((swift_name("resultCode")));
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.SerialName(value="ResultDesc")
+*/
+@property (readonly) NSString *resultDescription __attribute__((swift_name("resultDescription")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("QueryMpesaExpressResponse.Companion")))
+@interface DarajaMultiplatformQueryMpesaExpressResponseCompanion : DarajaMultiplatformBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) DarajaMultiplatformQueryMpesaExpressResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
 __attribute__((swift_name("KotlinComparable")))
@@ -196,6 +475,19 @@ __attribute__((swift_name("DarajaEnvironment")))
 @property (class, readonly) DarajaMultiplatformDarajaEnvironment *productionEnvironment __attribute__((swift_name("productionEnvironment")));
 @property (class, readonly) DarajaMultiplatformDarajaEnvironment *sandboxEnvironment __attribute__((swift_name("sandboxEnvironment")));
 + (DarajaMultiplatformKotlinArray<DarajaMultiplatformDarajaEnvironment *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<DarajaMultiplatformDarajaEnvironment *> *entries __attribute__((swift_name("entries")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DarajaIdentifierType")))
+@interface DarajaMultiplatformDarajaIdentifierType : DarajaMultiplatformKotlinEnum<DarajaMultiplatformDarajaIdentifierType *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) DarajaMultiplatformDarajaIdentifierType *tillNumber __attribute__((swift_name("tillNumber")));
+@property (class, readonly) DarajaMultiplatformDarajaIdentifierType *shortCode __attribute__((swift_name("shortCode")));
++ (DarajaMultiplatformKotlinArray<DarajaMultiplatformDarajaIdentifierType *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<DarajaMultiplatformDarajaIdentifierType *> *entries __attribute__((swift_name("entries")));
 @end
 
 __attribute__((swift_name("DarajaResult")))
@@ -205,8 +497,8 @@ __attribute__((swift_name("DarajaResult")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DarajaResultError")))
 @interface DarajaMultiplatformDarajaResultFailure : DarajaMultiplatformDarajaResult<DarajaMultiplatformKotlinNothing *>
-- (instancetype)initWithException:(DarajaMultiplatformDarajaException *)exception __attribute__((swift_name("init(exception:)"))) __attribute__((objc_designated_initializer));
-- (DarajaMultiplatformDarajaResultFailure *)doCopyException:(DarajaMultiplatformDarajaException *)exception __attribute__((swift_name("doCopy(exception:)")));
+- (instancetype)initWithException:(DarajaMultiplatformDarajaException *)exception __attribute__((swift_name("init(error:)"))) __attribute__((objc_designated_initializer));
+- (DarajaMultiplatformDarajaResultFailure *)doCopyException:(DarajaMultiplatformDarajaException *)exception __attribute__((swift_name("doCopy(error:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -225,6 +517,21 @@ __attribute__((swift_name("DarajaResultSuccess")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DarajaTransactionCode")))
+@interface DarajaMultiplatformDarajaTransactionCode : DarajaMultiplatformKotlinEnum<DarajaMultiplatformDarajaTransactionCode *>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) DarajaMultiplatformDarajaTransactionCode *bg __attribute__((swift_name("bg")));
+@property (class, readonly) DarajaMultiplatformDarajaTransactionCode *wa __attribute__((swift_name("wa")));
+@property (class, readonly) DarajaMultiplatformDarajaTransactionCode *pb __attribute__((swift_name("pb")));
+@property (class, readonly) DarajaMultiplatformDarajaTransactionCode *sm __attribute__((swift_name("sm")));
+@property (class, readonly) DarajaMultiplatformDarajaTransactionCode *sb __attribute__((swift_name("sb")));
++ (DarajaMultiplatformKotlinArray<DarajaMultiplatformDarajaTransactionCode *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<DarajaMultiplatformDarajaTransactionCode *> *entries __attribute__((swift_name("entries")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DarajaTransactionType")))
 @interface DarajaMultiplatformDarajaTransactionType : DarajaMultiplatformKotlinEnum<DarajaMultiplatformDarajaTransactionType *>
 + (instancetype)alloc __attribute__((unavailable));
@@ -233,222 +540,7 @@ __attribute__((swift_name("DarajaTransactionType")))
 @property (class, readonly) DarajaMultiplatformDarajaTransactionType *customerpaybillonline __attribute__((swift_name("customerpaybillonline")));
 @property (class, readonly) DarajaMultiplatformDarajaTransactionType *customerbuygoodsonline __attribute__((swift_name("customerbuygoodsonline")));
 + (DarajaMultiplatformKotlinArray<DarajaMultiplatformDarajaTransactionType *> *)values __attribute__((swift_name("values()")));
-@end
-
-__attribute__((swift_name("KotlinThrowable")))
-@interface DarajaMultiplatformKotlinThrowable : DarajaMultiplatformBase
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
-- (DarajaMultiplatformKotlinArray<NSString *> *)getStackTrace __attribute__((swift_name("getStackTrace()")));
-- (void)printStackTrace __attribute__((swift_name("printStackTrace()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) DarajaMultiplatformKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
-@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
-- (NSError *)asError __attribute__((swift_name("asError()")));
-@end
-
-__attribute__((swift_name("KotlinException")))
-@interface DarajaMultiplatformKotlinException : DarajaMultiplatformKotlinThrowable
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaException")))
-@interface DarajaMultiplatformDarajaException : DarajaMultiplatformKotlinException
-- (instancetype)initWithRequestId:(NSString * _Nullable)requestId errorCode:(NSString * _Nullable)errorCode errorMessage:(NSString * _Nullable)errorMessage __attribute__((swift_name("init(requestId:errorCode:errorMessage:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-+ (instancetype)new __attribute__((unavailable));
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-- (instancetype)initWithCause:(DarajaMultiplatformKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) DarajaMultiplatformDarajaExceptionCompanion *companion __attribute__((swift_name("companion")));
-- (DarajaMultiplatformDarajaException *)doCopyRequestId:(NSString * _Nullable)requestId errorCode:(NSString * _Nullable)errorCode errorMessage:(NSString * _Nullable)errorMessage __attribute__((swift_name("doCopy(requestId:errorCode:errorMessage:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property NSString * _Nullable errorCode __attribute__((swift_name("errorCode")));
-@property NSString * _Nullable errorMessage __attribute__((swift_name("errorMessage")));
-@property NSString * _Nullable requestId __attribute__((swift_name("requestId")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaException.Companion")))
-@interface DarajaMultiplatformDarajaExceptionCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformDarajaExceptionCompanion *shared __attribute__((swift_name("shared")));
-- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaPaymentRequest")))
-@interface DarajaMultiplatformDarajaPaymentRequest : DarajaMultiplatformBase
-- (instancetype)initWithBusinessShortCode:(NSString *)businessShortCode password:(NSString *)password phoneNumber:(NSString *)phoneNumber timestamp:(NSString *)timestamp transactionType:(NSString *)transactionType amount:(NSString *)amount partyA:(NSString *)partyA partyB:(NSString *)partyB callBackUrl:(NSString *)callBackUrl accountReference:(NSString *)accountReference transactionDesc:(NSString *)transactionDesc __attribute__((swift_name("init(businessShortCode:password:phoneNumber:timestamp:transactionType:amount:partyA:partyB:callBackUrl:accountReference:transactionDesc:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) DarajaMultiplatformDarajaPaymentRequestCompanion *companion __attribute__((swift_name("companion")));
-- (DarajaMultiplatformDarajaPaymentRequest *)doCopyBusinessShortCode:(NSString *)businessShortCode password:(NSString *)password phoneNumber:(NSString *)phoneNumber timestamp:(NSString *)timestamp transactionType:(NSString *)transactionType amount:(NSString *)amount partyA:(NSString *)partyA partyB:(NSString *)partyB callBackUrl:(NSString *)callBackUrl accountReference:(NSString *)accountReference transactionDesc:(NSString *)transactionDesc __attribute__((swift_name("doCopy(businessShortCode:password:phoneNumber:timestamp:transactionType:amount:partyA:partyB:callBackUrl:accountReference:transactionDesc:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *accountReference __attribute__((swift_name("accountReference")));
-@property (readonly) NSString *amount __attribute__((swift_name("amount")));
-@property (readonly) NSString *businessShortCode __attribute__((swift_name("businessShortCode")));
-@property (readonly) NSString *callBackUrl __attribute__((swift_name("callBackUrl")));
-@property (readonly) NSString *partyA __attribute__((swift_name("partyA")));
-@property (readonly) NSString *partyB __attribute__((swift_name("partyB")));
-@property (readonly) NSString *password __attribute__((swift_name("password")));
-@property (readonly) NSString *phoneNumber __attribute__((swift_name("phoneNumber")));
-@property (readonly) NSString *timestamp __attribute__((swift_name("timestamp")));
-@property (readonly) NSString *transactionDesc __attribute__((swift_name("transactionDesc")));
-@property (readonly) NSString *transactionType __attribute__((swift_name("transactionType")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaPaymentRequest.Companion")))
-@interface DarajaMultiplatformDarajaPaymentRequestCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformDarajaPaymentRequestCompanion *shared __attribute__((swift_name("shared")));
-- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaPaymentResponse")))
-@interface DarajaMultiplatformDarajaPaymentResponse : DarajaMultiplatformBase
-- (instancetype)initWithMerchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID responseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription customerMessage:(NSString *)customerMessage __attribute__((swift_name("init(merchantRequestID:checkoutRequestID:responseCode:responseDescription:customerMessage:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) DarajaMultiplatformDarajaPaymentResponseCompanion *companion __attribute__((swift_name("companion")));
-- (DarajaMultiplatformDarajaPaymentResponse *)doCopyMerchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID responseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription customerMessage:(NSString *)customerMessage __attribute__((swift_name("doCopy(merchantRequestID:checkoutRequestID:responseCode:responseDescription:customerMessage:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property NSString *checkoutRequestID __attribute__((swift_name("checkoutRequestID")));
-@property NSString *customerMessage __attribute__((swift_name("customerMessage")));
-@property NSString *merchantRequestID __attribute__((swift_name("merchantRequestID")));
-@property NSString *responseCode __attribute__((swift_name("responseCode")));
-@property NSString *responseDescription __attribute__((swift_name("responseDescription")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaPaymentResponse.Companion")))
-@interface DarajaMultiplatformDarajaPaymentResponseCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformDarajaPaymentResponseCompanion *shared __attribute__((swift_name("shared")));
-- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaToken")))
-@interface DarajaMultiplatformDarajaToken : DarajaMultiplatformBase
-- (instancetype)initWithAccessToken:(NSString *)accessToken expiresIn:(NSString *)expiresIn __attribute__((swift_name("init(accessToken:expiresIn:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) DarajaMultiplatformDarajaTokenCompanion *companion __attribute__((swift_name("companion")));
-- (DarajaMultiplatformDarajaToken *)doCopyAccessToken:(NSString *)accessToken expiresIn:(NSString *)expiresIn __attribute__((swift_name("doCopy(accessToken:expiresIn:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *accessToken __attribute__((swift_name("accessToken")));
-@property (readonly) NSString *expiresIn __attribute__((swift_name("expiresIn")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaToken.Companion")))
-@interface DarajaMultiplatformDarajaTokenCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformDarajaTokenCompanion *shared __attribute__((swift_name("shared")));
-- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaTransactionResponse")))
-@interface DarajaMultiplatformDarajaTransactionResponse : DarajaMultiplatformBase
-- (instancetype)initWithResponseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription merchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID resultCode:(NSString *)resultCode resultDescription:(NSString *)resultDescription __attribute__((swift_name("init(responseCode:responseDescription:merchantRequestID:checkoutRequestID:resultCode:resultDescription:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) DarajaMultiplatformDarajaTransactionResponseCompanion *companion __attribute__((swift_name("companion")));
-- (DarajaMultiplatformDarajaTransactionResponse *)doCopyResponseCode:(NSString *)responseCode responseDescription:(NSString *)responseDescription merchantRequestID:(NSString *)merchantRequestID checkoutRequestID:(NSString *)checkoutRequestID resultCode:(NSString *)resultCode resultDescription:(NSString *)resultDescription __attribute__((swift_name("doCopy(responseCode:responseDescription:merchantRequestID:checkoutRequestID:resultCode:resultDescription:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *checkoutRequestID __attribute__((swift_name("checkoutRequestID")));
-@property (readonly) NSString *merchantRequestID __attribute__((swift_name("merchantRequestID")));
-@property (readonly) NSString *responseCode __attribute__((swift_name("responseCode")));
-@property (readonly) NSString *responseDescription __attribute__((swift_name("responseDescription")));
-@property (readonly) NSString *resultCode __attribute__((swift_name("resultCode")));
-@property (readonly) NSString *resultDescription __attribute__((swift_name("resultDescription")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DarajaTransactionResponse.Companion")))
-@interface DarajaMultiplatformDarajaTransactionResponseCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformDarajaTransactionResponseCompanion *shared __attribute__((swift_name("shared")));
-- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("QueryDarajaTransactionRequest")))
-@interface DarajaMultiplatformQueryDarajaTransactionRequest : DarajaMultiplatformBase
-- (instancetype)initWithBusinessShortCode:(NSString *)businessShortCode password:(NSString *)password timestamp:(NSString *)timestamp checkoutRequestID:(NSString *)checkoutRequestID __attribute__((swift_name("init(businessShortCode:password:timestamp:checkoutRequestID:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) DarajaMultiplatformQueryDarajaTransactionRequestCompanion *companion __attribute__((swift_name("companion")));
-- (DarajaMultiplatformQueryDarajaTransactionRequest *)doCopyBusinessShortCode:(NSString *)businessShortCode password:(NSString *)password timestamp:(NSString *)timestamp checkoutRequestID:(NSString *)checkoutRequestID __attribute__((swift_name("doCopy(businessShortCode:password:timestamp:checkoutRequestID:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *businessShortCode __attribute__((swift_name("businessShortCode")));
-@property (readonly) NSString *checkoutRequestID __attribute__((swift_name("checkoutRequestID")));
-@property (readonly) NSString *password __attribute__((swift_name("password")));
-@property (readonly) NSString *timestamp __attribute__((swift_name("timestamp")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("QueryDarajaTransactionRequest.Companion")))
-@interface DarajaMultiplatformQueryDarajaTransactionRequestCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformQueryDarajaTransactionRequestCompanion *shared __attribute__((swift_name("shared")));
-- (id<DarajaMultiplatformKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@property (class, readonly) NSArray<DarajaMultiplatformDarajaTransactionType *> *entries __attribute__((swift_name("entries")));
 @end
 
 @interface DarajaMultiplatformDarajaResult (Extensions)
@@ -457,12 +549,9 @@ __attribute__((swift_name("QueryDarajaTransactionRequest.Companion")))
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinEnumCompanion")))
-@interface DarajaMultiplatformKotlinEnumCompanion : DarajaMultiplatformBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) DarajaMultiplatformKotlinEnumCompanion *shared __attribute__((swift_name("shared")));
+__attribute__((swift_name("DarajaSafeApiCallKt")))
+@interface DarajaMultiplatformDarajaSafeApiCallKt : DarajaMultiplatformBase
++ (id _Nullable)some __attribute__((swift_name("some()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -475,11 +564,6 @@ __attribute__((swift_name("KotlinArray")))
 - (id<DarajaMultiplatformKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(T _Nullable)value __attribute__((swift_name("set(index:value:)")));
 @property (readonly) int32_t size __attribute__((swift_name("size")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinNothing")))
-@interface DarajaMultiplatformKotlinNothing : DarajaMultiplatformBase
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
@@ -499,6 +583,20 @@ __attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
 __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @protocol DarajaMultiplatformKotlinx_serialization_coreKSerializer <DarajaMultiplatformKotlinx_serialization_coreSerializationStrategy, DarajaMultiplatformKotlinx_serialization_coreDeserializationStrategy>
 @required
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinEnumCompanion")))
+@interface DarajaMultiplatformKotlinEnumCompanion : DarajaMultiplatformBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) DarajaMultiplatformKotlinEnumCompanion *shared __attribute__((swift_name("shared")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinNothing")))
+@interface DarajaMultiplatformKotlinNothing : DarajaMultiplatformBase
 @end
 
 __attribute__((swift_name("KotlinIterator")))
